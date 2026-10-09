@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Datenschutzerklärung für den privaten Offline-Test von GH-LossControl.">
+    <meta name="theme-color" content="#082f49">
+    <title>Datenschutzerklärung · GH-LossControl</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --navy: #082f49;
+        --blue: #0062a8;
+        --ink: #15384e;
+        --muted: #4b6272;
+        --line: #dbe5ed;
+        --surface: #ffffff;
+        --background: #f3f6fa;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--background);
+        color: var(--ink);
+        font: 1.0625rem/1.75 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        -webkit-text-size-adjust: 100%;
+      }
+      .page { width: min(calc(100% - 2.5rem), 56rem); margin-inline: auto; }
+      .skip-link {
+        position: absolute;
+        top: .75rem;
+        left: .75rem;
+        padding: .75rem 1rem;
+        transform: translateY(-200%);
+        background: var(--surface);
+        color: var(--blue);
+        border: 1px solid var(--blue);
+        border-radius: .5rem;
+        z-index: 1;
+      }
+      .skip-link:focus { transform: translateY(0); }
+      .masthead { background: var(--navy); color: var(--surface); }
+      .masthead .page {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: .5rem 1.5rem;
+        padding-block: 1.125rem;
+      }
+      .brand { font-size: 1.125rem; font-weight: 750; letter-spacing: -.015em; }
+      .masthead-label { color: #d9e8f3; font-size: .875rem; }
+      main { padding-block: 3rem 2rem; }
+      .eyebrow { margin: 0 0 .75rem; color: var(--blue); font-size: .875rem; font-weight: 700; }
+      h1 { margin: 0; color: var(--navy); font-size: clamp(2rem, 5vw, 3rem); font-weight: 750; line-height: 1.2; letter-spacing: -.035em; overflow-wrap: anywhere; }
+      .intro { margin: 1rem 0 1.5rem; color: var(--muted); font-size: 1.125rem; }
+      .metadata {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem 2.5rem;
+        margin: 0 0 2rem;
+      }
+      .metadata div { min-width: 0; }
+      .metadata dt { color: var(--muted); font-size: .875rem; }
+      .metadata dd { margin: .125rem 0 0; color: var(--navy); font-size: .9375rem; font-weight: 600; }
+      .contents {
+        margin-bottom: 1.5rem;
+        padding: 1.25rem 1.5rem;
+        border: 1px solid var(--line);
+        border-radius: .875rem;
+        background: #edf3f8;
+      }
+      .contents h2 { margin: 0 0 .5rem; font-size: 1rem; }
+      .contents ol {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: .25rem 1.5rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .contents a { display: block; min-height: 44px; padding-block: .5rem; font-size: .9375rem; }
+      article {
+        padding: 2.25rem 2.5rem;
+        border: 1px solid var(--line);
+        border-radius: 1rem;
+        background: var(--surface);
+        box-shadow: 0 4px 20px #082f4908;
+      }
+      section { scroll-margin-top: 1.5rem; }
+      section + section { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+      h2 { margin: 0 0 .75rem; color: var(--navy); font-size: 1.25rem; font-weight: 700; line-height: 1.4; }
+      p { margin: 0 0 1rem; }
+      section p:last-child { margin-bottom: 0; }
+      a { color: var(--blue); text-underline-offset: .2em; overflow-wrap: anywhere; }
+      a:hover { text-decoration-thickness: 2px; }
+      a:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; border-radius: 2px; }
+      footer { padding-block: 0 2rem; color: var(--muted); font-size: .875rem; }
+      footer p { margin: 0; }
+      @media (max-width: 600px) {
+        body { font-size: 1rem; }
+        .page { width: min(calc(100% - 2rem), 56rem); }
+        .masthead .page { align-items: flex-start; flex-direction: column; padding-block: 1rem; }
+        main { padding-block: 2rem 1.5rem; }
+        .intro { font-size: 1rem; }
+        .metadata { gap: .875rem; flex-direction: column; margin-bottom: 1.5rem; }
+        .contents { padding: 1rem 1.125rem; }
+        .contents ol { grid-template-columns: minmax(0, 1fr); gap: 0; }
+        article { padding: 1.5rem 1.25rem; border-radius: .875rem; }
+        section + section { margin-top: 1.5rem; padding-top: 1.5rem; }
+        h2 { font-size: 1.125rem; }
+      }
+      @media print {
+        body { background: #fff; color: #000; font-size: 11pt; }
+        .page { width: 100%; }
+        .skip-link, .contents { display: none; }
+        .masthead { background: none; color: #000; border-bottom: 1px solid #aaa; }
+        .masthead-label, .eyebrow, .intro, .metadata dt, footer { color: #333; }
+        main { padding-block: 1.5rem; }
+        article { padding: 0; border: 0; box-shadow: none; }
+        h1, h2, .metadata dd { color: #000; }
+        h2 { break-after: avoid; }
+        a { color: #000; }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#datenschutzerklaerung">Zur Datenschutzerklärung</a>
+    <header class="masthead">
+      <div class="page">
+        <span class="brand">GH-LossControl</span>
+        <span class="masthead-label">Daten und Datenschutz</span>
+      </div>
+    </header>
+    <main class="page" id="datenschutzerklaerung">
+      <div class="eyebrow">Privater Offline-Test</div>
+      <h1>Datenschutzerklärung</h1>
+      <p class="intro">Informationen zum Umgang mit Daten in den internen Android-Testversionen von GH-LossControl.</p>
+      <dl class="metadata">
+        <div><dt>Stand</dt><dd><time datetime="2026-10-09">9. Oktober 2026</time></dd></div>
+        <div><dt>Geltungsbereich</dt><dd>0.3.8 · 30024 und 30025<br>0.3.9 · 30026</dd></div>
+      </dl>
+      <nav class="contents" aria-labelledby="inhalt">
+        <h2 id="inhalt">Inhalt</h2>
+        <ol>
+          <li><a href="#kontakt">Verantwortlicher und Kontakt</a></li>
+          <li><a href="#testbetrieb">Privater Testbetrieb</a></li>
+          <li><a href="#geraetedaten">Daten auf deinem Gerät</a></li>
+          <li><a href="#uebermittlung">Übermittlung und Auswertung</a></li>
+          <li><a href="#berechtigungen">Zugriffe und Berechtigungen</a></li>
+          <li><a href="#loeschung">Speicherung und Löschung</a></li>
+          <li><a href="#hosting">Bereitstellung dieser Seite</a></li>
+          <li><a href="#anbindungen">Spätere Unternehmensanbindungen</a></li>
+        </ol>
+      </nav>
+      <article aria-label="Datenschutzerklärung für GH-LossControl">
+        <section id="kontakt" aria-labelledby="kontakt-titel">
+          <h2 id="kontakt-titel">Verantwortlicher und Kontakt</h2>
+          <p>Verantwortlich für GH-LossControl ist Paul Bergk. Bei Fragen zum Datenschutz erreichst du mich unter <a href="mailto:oerdisback@gmail.com">oerdisback@gmail.com</a>.</p>
+        </section>
+        <section id="testbetrieb" aria-labelledby="testbetrieb-titel">
+          <h2 id="testbetrieb-titel">Wofür die Test-App gedacht ist</h2>
+          <p>GH-LossControl dient zum Ausprobieren von Arbeitsabläufen mit mitgelieferten Testdaten. Diese Erklärung gilt für die internen Android-Testversionen 0.3.8 mit den Versionscodes 30024 und 30025 sowie für die kommende interne Android-Testversion 0.3.9 mit dem Versionscode 30026.</p>
+          <p>In diesen Testversionen sind keine Unternehmens-API und keine Microsoft-Anmeldung eingerichtet. Wähle auf der Startseite „Lokale Testprofile“, dann „Ohne Verbindung“ und zum Beispiel „Filialteam“. Ein Benutzerkonto oder Passwort ist dafür nicht nötig.</p>
+        </section>
+        <section id="geraetedaten" aria-labelledby="geraetedaten-titel">
+          <h2 id="geraetedaten-titel">Daten auf deinem Gerät</h2>
+          <p>Im Modus „Ohne Verbindung“ verarbeitet die App die mitgelieferten Testdaten und deine Testeingaben auf deinem Gerät. Einstellungen können lokal gespeichert werden. Änderungen am mitgelieferten Testbestand gelten nur für die laufende Sitzung und werden nicht mit Unternehmensdaten synchronisiert. Wenn du selbst Dateien auswählst oder exportierst, bleiben diese unter deiner Kontrolle.</p>
+        </section>
+        <section id="uebermittlung" aria-labelledby="uebermittlung-titel">
+          <h2 id="uebermittlung-titel">Übermittlung und Auswertung</h2>
+          <p>Die Offline-Testfunktionen senden deine Testeingaben nicht an eine Unternehmens-API oder automatisch an den Entwickler. Es sind keine Werbedienste und keine Dienste für Nutzungsanalyse eingebunden. Die App enthält eine technische Fehlerberichtsfunktion für angemeldete Online-Sitzungen; in der Offline-Testsession ist diese Übermittlung ausgeschaltet. Die enthaltene Microsoft-Anmeldebibliothek ist in diesen Testversionen nicht eingerichtet. Installation und Aktualisierung über Google Play werden von Google nach dessen Datenschutzbestimmungen verarbeitet. Wenn du mir eine E-Mail schickst, verarbeite ich die Nachricht und deine Absenderadresse, um dir zu antworten.</p>
+        </section>
+        <section id="berechtigungen" aria-labelledby="berechtigungen-titel">
+          <h2 id="berechtigungen-titel">Zugriffe und Berechtigungen</h2>
+          <p>Die App kann den Verbindungsstatus erkennen und besitzt eine Internetberechtigung. Dateien oder Bilder werden nur durch eine von dir ausgelöste Aktion ausgewählt; eine Kameraaufnahme erfolgt über die von dir gewählte Kamera-App. Die App fordert keinen Zugriff auf Standort oder Kontakte an. Die automatische Android-Sicherung der App-Daten ist deaktiviert.</p>
+        </section>
+        <section id="loeschung" aria-labelledby="loeschung-titel">
+          <h2 id="loeschung-titel">Speicherung und Löschung</h2>
+          <p>Lokale App-Einstellungen und gespeicherte App-Daten kannst du über die Android-Einstellungen unter „Apps“ beim Eintrag von GH-LossControl unter „Speicher“ → „Daten löschen“ entfernen. Auch eine Deinstallation entfernt den privaten App-Speicher. Selbst exportierte Dateien und bereits versandte E-Mails werden dadurch nicht gelöscht. Für Fragen zu einer Nachricht oder zur Löschung von Daten, die du mir direkt geschickt hast, nutze bitte die oben genannte Kontaktadresse.</p>
+        </section>
+        <section id="hosting" aria-labelledby="hosting-titel">
+          <h2 id="hosting-titel">Bereitstellung dieser Seite</h2>
+          <p>Diese öffentliche Datenschutzerklärung wird über GitHub Pages bereitgestellt. Beim Aufruf der Seite protokolliert und speichert GitHub nach eigener Angabe die IP-Adresse von Besucherinnen und Besuchern zu Sicherheitszwecken, auch ohne GitHub-Anmeldung. Weitere Angaben zur Verarbeitung durch GitHub findest du in der <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noreferrer">Datenschutzerklärung von GitHub</a>.</p>
+          <p>Die Seite selbst verwendet keine Skripte, Analysewerkzeuge oder extern eingebundenen Schriftarten.</p>
+        </section>
+        <section id="anbindungen" aria-labelledby="anbindungen-titel">
+          <h2 id="anbindungen-titel">Spätere Unternehmensanbindungen</h2>
+          <p>Die Software unterstützt grundsätzlich einen verbundenen Betrieb mit Unternehmens-API, Microsoft-Anmeldung und weiteren freigegebenen Diensten. Diese Dienste gehören nicht zum eingerichteten Offline-Testbetrieb dieser Testversionen. Vor ihrer Aktivierung müssen Verantwortlichkeit, verarbeitete Daten, Empfänger und Speicherfristen für die konkrete Umgebung festgelegt und diese Erklärung ergänzt werden.</p>
+        </section>
+      </article>
+    </main>
+    <footer class="page"><p>GH-LossControl · Datenschutzerklärung für den privaten Offline-Test</p></footer>
+  </body>
+</html>
