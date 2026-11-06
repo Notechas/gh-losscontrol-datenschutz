@@ -140,14 +140,14 @@
       <p class="intro">So verarbeitet die Android-Testversion von GH-LossControl deine Eingaben und die Daten, die du selbst weitergibst.</p>
       <dl class="metadata">
         <div><dt>Stand</dt><dd><time datetime="2026-11-06">6. November 2026</time></dd></div>
-        <div><dt>Geltungsbereich</dt><dd>Privater Offline-Test bis Version 0.5.4 · Versionscode 30034</dd></div>
+        <div><dt>Geltungsbereich</dt><dd>Privater Offline-Test bis Version 0.5.5 · Versionscode 30035</dd></div>
       </dl>
       <nav class="contents" aria-labelledby="inhalt">
         <h2 id="inhalt">Inhalt</h2>
         <ol>
           <li><a href="#kontakt">Verantwortlicher und Kontakt</a></li>
           <li><a href="#testbetrieb">Privater Testbetrieb</a></li>
-          <li><a href="#erfassung">Artikel, Etikettfotos und Handscanner</a></li>
+          <li><a href="#erfassung">Artikel, Kamerascan und Handscanner</a></li>
           <li><a href="#geraetedaten">Was auf deinem Gerät bleibt</a></li>
           <li><a href="#berechtigungen">Persönliche Geräteerinnerungen</a></li>
           <li><a href="#uebermittlung">Exporte, E-Mail und Google Play</a></li>
@@ -164,25 +164,25 @@
         </section>
         <section id="testbetrieb" aria-labelledby="testbetrieb-titel">
           <h2 id="testbetrieb-titel">Privater Testbetrieb</h2>
-          <p>Die internen Android-Testversionen 0.3.8 bis 0.5.4 verwenden mitgelieferte Beispieldaten. Die Anpassung des kleinen Logos in 0.5.4 ändert den Umgang mit deinen Daten nicht. Für den Offline-Test wählst du „Lokale Testprofile“, „Ohne Verbindung“ und anschließend ein Profil, etwa „Filialteam“. Das Profil steht für eine Rolle in der Vorführung. Dazu brauchst du weder ein persönliches App-Konto noch ein Firmenkennwort.</p>
+          <p>Die Android-Testversionen 0.3.8 bis 0.5.5 verwenden mitgelieferte Beispieldaten. Für den Offline-Test wählst du „Lokale Testprofile“, „Ohne Verbindung“ und anschließend ein Profil, etwa „Filialteam“. Das Profil steht für eine Rolle in der Vorführung. Dazu brauchst du weder ein persönliches App-Konto noch ein Firmenkennwort.</p>
           <p>Die Test-App verwendet für diese Arbeitsabläufe keine Unternehmens-API. Deine Eingaben werden weder an mich geschickt noch mit einem Unternehmen synchronisiert. Die Offline-Testfunktionen verwenden weder Werbung noch einen Dienst zur Nutzungsanalyse. Verwende zum Ausprobieren Beispieldaten, auch für Fotos und Anlagen.</p>
         </section>
         <section id="erfassung" aria-labelledby="erfassung-titel">
-          <h2 id="erfassung-titel">Artikel, Etikettfotos und Handscanner</h2>
-          <p>Seit Version 0.5.3 kannst du einen Artikel über seinen Namen, die Artikelnummer oder den Strichcode suchen. Bei der Suche mit einem Etikettfoto wählst du ein Bild aus oder öffnest die Kamera-App deines Geräts. GH-LossControl verarbeitet das ausgewählte Bild auf dem Gerät, um einen Produktcode auszulesen. Die Test-App überträgt dieses Foto nicht und speichert es bei der Codesuche nicht als Anlage. Ein bereits in der Galerie oder durch die Kamera-App gespeichertes Original bleibt dort.</p>
-          <p>Nach einem Fototreffer entscheidest du mit „Code übernehmen“, ob der Code in die Erfassung gelangt. Der Code dient der Suche im Testkatalog. Menge und Mindesthaltbarkeitsdatum trägst du gesondert ein.</p>
-          <p>Ein Handscanner, etwa an einem Zebra-Gerät, kann den Code wie eine Tastatureingabe an das geöffnete MDE-Scanfeld übergeben. Enter oder „Artikelcode übernehmen“ bestätigt die Eingabe. GH-LossControl übernimmt den übertragenen Artikelcode und sucht im lokalen Testkatalog. Etikettfoto und Handscanner lassen sich unabhängig voneinander ausschalten. Die Wahl wird nach Möglichkeit auf dem Gerät gespeichert. Die manuelle Erfassung bleibt verfügbar.</p>
+          <h2 id="erfassung-titel">Artikel, Kamerascan und Handscanner</h2>
+          <p>In Version 0.5.5 kannst du einen Artikel direkt mit der Kamera scannen. Erst wenn du die Kamera startest und die Freigabe erteilst, erscheint das Livebild. Die App wertet den Strichcode auf dem Gerät aus. Sie speichert und überträgt weder das Kamerabild noch eine Videoaufnahme. Bei einem eindeutigen Treffer übernimmt sie den Code für die Artikelsuche und beendet den Scan. Du kannst ihn auch selbst stoppen.</p>
+          <p>Alternativ kannst du ein Etikettfoto auswählen und den erkannten Code bestätigen. In den Versionen 0.5.3 und 0.5.4 konntest du dafür auch ein einzelnes Foto mit der Kamera-App aufnehmen. Ein Original, das bereits in der Galerie liegt, bleibt dort. Der Testkatalog liefert die vorhandenen Angaben zum Artikel. Menge und Mindesthaltbarkeitsdatum trägst du selbst ein.</p>
+          <p>Ein Handscanner, etwa an einem Zebra-Gerät, kann den Code wie eine Tastatureingabe an das geöffnete MDE-Scanfeld übergeben. Enter oder „Artikelcode übernehmen“ bestätigt die Eingabe. Kamerascan und Etikettfotos lassen sich gemeinsam ausschalten, der Handscanner separat. Die Wahl wird nach Möglichkeit auf dem Gerät gespeichert. Die manuelle Produktsuche bleibt verfügbar.</p>
         </section>
         <section id="geraetedaten" aria-labelledby="geraetedaten-titel">
           <h2 id="geraetedaten-titel">Was auf deinem Gerät bleibt</h2>
           <p>Die App verarbeitet im Testprofil beispielsweise Artikel, Menge, MHD, gewählte Filiale und deine Eingaben zu einem Vorgang lokal. Viele Änderungen am Beispielbestand gelten nur für die laufende Sitzung. Die Auswahl der Erfassungsfunktionen kann auch nach dem Schließen erhalten bleiben.</p>
-          <p>Seit Version 0.3.11 werden eigens angelegte Testdurchgänge, ihre ursprünglichen Angaben, Revisionen und bewusst beigefügte Testanlagen über das Ende der Sitzung hinaus im App-Speicher aufbewahrt. Sie sind an Testprofil, Testumgebung und Filiale gebunden und können nach dem Abmelden und erneuten Öffnen wieder verfügbar sein. Das ist eine andere Verwendung als die kurzzeitige Auswertung eines Etikettfotos.</p>
+          <p>Selbst angelegte Durchgänge bleiben mit ihren Originalständen und bewusst beigefügten Dateien auf dem Gerät gespeichert. Ein Durchgangsschein gehört zur Gratiswarenabsprache, ein Lieferbeleg zum jeweiligen manuell erfassten Eingang. Bilder und PDFs in einem Offline-Testdurchgang bleiben auch nach dem Abmelden im App-Speicher. Nach dem erneuten Öffnen sind sie für dasselbe lokale Testprofil und dieselbe Filiale zugänglich. Beim Kamerascan wird dagegen kein Bild als Beleg gespeichert.</p>
         </section>
         <section id="berechtigungen" aria-labelledby="berechtigungen-titel">
           <h2 id="berechtigungen-titel">Persönliche Geräteerinnerungen</h2>
           <p>Wenn du eine Erinnerung einrichtest, plant die App sie auf deinem Android-Gerät. Dafür kann Android um die Freigabe für Benachrichtigungen bitten. Gespeichert werden eine technische Kennung der Position oder Aufgabe, Art, Erinnerungs- und Ablaufzeit, Zustellstatus und die technische Zuordnung zu Testprofil, Umgebung und Filiale.</p>
           <p>Android zeigt einen allgemeinen Hinweis zum Öffnen der App. Artikelname, Filiale und Personenname erscheinen darin nicht. Ein Push-Dienst oder ein E-Mail-Versand wird für diese Geräteerinnerung nicht verwendet. Android kann die Anzeige im Hintergrund verzögern. Du kannst die Erinnerung in der App entfernen oder Benachrichtigungen in Android sperren. Beim ausdrücklichen Abmelden entfernt die App die persönlichen Geräteerinnerungen.</p>
-          <p>Für die Fotoaufnahme wird die von dir gewählte Kamera-App verwendet. GH-LossControl fordert dafür keine eigene Kameraberechtigung und keinen Zugriff auf Mikrofon, Standort oder Kontakte an.</p>
+          <p>Der Live-Kamerascan ab Version 0.5.5 braucht die Kamerafreigabe. Du kannst sie in den Android-Einstellungen widerrufen und Artikel weiterhin von Hand suchen. Der Scan verwendet weder Mikrofon noch Standort oder Kontakte.</p>
         </section>
         <section id="uebermittlung" aria-labelledby="uebermittlung-titel">
           <h2 id="uebermittlung-titel">Exporte, E-Mail und Google Play</h2>

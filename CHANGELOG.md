@@ -2,6 +2,16 @@
 
 Der Verlauf reicht von der ersten Projektfassung am 23. August 2026 bis zur aktuellen Android-Testversion. Bei jeder Fassung ist angegeben, wann sie entwickelt oder über Google Play zum Testen freigegeben wurde.
 
+## 0.5.5 · Kamerascan und Belege für Durchgänge
+
+6. November 2026 · Testfassung
+
+Bei der MHD-Kontrolle liest die Kamera den Strichcode direkt von der Packung. Der erkannte Code öffnet die Artikelsuche. Menge und Mindesthaltbarkeitsdatum werden weiterhin an der Ware geprüft und von Hand erfasst.
+
+Für eine Gratiswarenabsprache mit dem Außendienst lässt sich der Durchgangsschein als Bild oder PDF hinterlegen. Kommt die Ware an, gehören der Lieferbeleg, die tatsächliche Menge und das Eingangsdatum zum jeweiligen Eingang. Durchgang und MHD-Fall bleiben getrennte Vorgänge.
+
+Die Übersicht zeigt die Begrüßung und den aktuellen Arbeitsbereich auf einer eigenen Karte. „Mehr“ und das Menüsymbol öffnen dieselbe Seitennavigation. Lange Angaben zur Filiale, Rolle und Betriebsform lassen sich im Kopfbereich vollständig aufklappen.
+
 ## 0.5.4 · Schärferes Logo in kompakten Ansichten
 
 6. November 2026
