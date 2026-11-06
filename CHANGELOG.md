@@ -2,6 +2,14 @@
 
 Der Verlauf reicht von der ersten Projektfassung am 23. August 2026 bis zur aktuellen Android-Testversion. Bei jeder Fassung ist angegeben, wann sie entwickelt oder über Google Play zum Testen freigegeben wurde.
 
+## 0.5.4 · Schärferes Logo in kompakten Ansichten
+
+6. November 2026 · Entwicklungsstand
+
+Für das kleine Logo in der Anmeldung, der Kopfzeile und dem mobilen Menü verwendet die App jetzt eine Vorlage mit 512 statt 192 Pixeln. So bleiben die Konturen auch auf hochauflösenden Displays besser erkennbar.
+
+Die Freigabe für **0.5.4 (30034)** im geschlossenen Google-Play-Test steht aus.
+
 ## 0.5.3 · Neue Gestaltung und Android-Startsymbole
 
 6. November 2026
