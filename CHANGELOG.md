@@ -4,7 +4,7 @@ Der Verlauf reicht von der ersten Projektfassung am 23. August 2026 bis zur aktu
 
 ## 0.5.5 · Kamerascan und Belege für Durchgänge
 
-6. November 2026 · Testfassung
+6. November 2026 · Um 19:49 Uhr als 0.5.5 (30035) im geschlossenen Alpha-Test bei Google Play veröffentlicht.
 
 Bei der MHD-Kontrolle liest die Kamera den Strichcode direkt von der Packung. Der erkannte Code öffnet die Artikelsuche. Menge und Mindesthaltbarkeitsdatum werden weiterhin an der Ware geprüft und von Hand erfasst.
 
