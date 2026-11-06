@@ -64,6 +64,10 @@
       .metadata div { min-width: 0; }
       .metadata dt { color: var(--muted); font-size: .875rem; }
       .metadata dd { margin: .125rem 0 0; color: var(--navy); font-size: .9375rem; font-weight: 600; }
+      h2 { margin: 0 0 .75rem; color: var(--navy); font-size: 1.25rem; font-weight: 700; line-height: 1.4; }
+      a { color: var(--blue); text-underline-offset: .2em; overflow-wrap: anywhere; }
+      a:hover { text-decoration-thickness: 2px; }
+      a:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; border-radius: 2px; }
       .contents {
         margin-bottom: 1.5rem;
         padding: 1.25rem 1.5rem;
@@ -90,12 +94,8 @@
       }
       section { scroll-margin-top: 1.5rem; }
       section + section { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--line); }
-      h2 { margin: 0 0 .75rem; color: var(--navy); font-size: 1.25rem; font-weight: 700; line-height: 1.4; }
       p { margin: 0 0 1rem; }
       section p:last-child { margin-bottom: 0; }
-      a { color: var(--blue); text-underline-offset: .2em; overflow-wrap: anywhere; }
-      a:hover { text-decoration-thickness: 2px; }
-      a:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; border-radius: 2px; }
       footer { padding-block: 0 2rem; color: var(--muted); font-size: .875rem; }
       footer p { margin: 0; }
       @media (max-width: 600px) {
@@ -139,8 +139,8 @@
       <h1>Datenschutzerklärung</h1>
       <p class="intro">Informationen zum Umgang mit Daten in den internen Android-Testversionen von GH-LossControl.</p>
       <dl class="metadata">
-        <div><dt>Stand</dt><dd><time datetime="2026-10-09">9. Oktober 2026</time></dd></div>
-        <div><dt>Geltungsbereich</dt><dd>0.3.8 · 30024 und 30025<br>0.3.9 · 30026</dd></div>
+        <div><dt>Stand</dt><dd><time datetime="2026-11-06">6. November 2026</time></dd></div>
+        <div><dt>Geltungsbereich</dt><dd>Privater Offline-Test bis Version 0.5.3 · 30033<br>Etikettfotos und persönliche Geräteerinnerungen</dd></div>
       </dl>
       <nav class="contents" aria-labelledby="inhalt">
         <h2 id="inhalt">Inhalt</h2>
@@ -162,19 +162,22 @@
         </section>
         <section id="testbetrieb" aria-labelledby="testbetrieb-titel">
           <h2 id="testbetrieb-titel">Wofür die Test-App gedacht ist</h2>
-          <p>GH-LossControl dient zum Ausprobieren von Arbeitsabläufen mit mitgelieferten Testdaten. Diese Erklärung gilt für die internen Android-Testversionen 0.3.8 mit den Versionscodes 30024 und 30025 sowie für die interne Android-Testversion 0.3.9 mit dem Versionscode 30026.</p>
+          <p>GH-LossControl dient zum Ausprobieren von Arbeitsabläufen mit mitgelieferten Testdaten. Die Beschreibung umfasst den privaten Offline-Test der Versionen 0.3.8 bis 0.5.3. Die Angaben zur Strichcodesuche und zu persönlichen Geräteerinnerungen gelten für die Design-Testversion 0.5.3.</p>
           <p>In diesen Testversionen sind keine Unternehmens-API und keine Microsoft-Anmeldung eingerichtet. Wähle auf der Startseite „Lokale Testprofile“, dann „Ohne Verbindung“ und zum Beispiel „Filialteam“. Ein Benutzerkonto oder Passwort ist dafür nicht nötig.</p>
         </section>
         <section id="geraetedaten" aria-labelledby="geraetedaten-titel">
           <h2 id="geraetedaten-titel">Daten auf deinem Gerät</h2>
-          <p>Im Modus „Ohne Verbindung“ verarbeitet die App die mitgelieferten Testdaten und deine Testeingaben auf deinem Gerät. Einstellungen können lokal gespeichert werden. Änderungen am mitgelieferten Testbestand gelten nur für die laufende Sitzung und werden nicht mit Unternehmensdaten synchronisiert. Wenn du selbst Dateien auswählst oder exportierst, bleiben diese unter deiner Kontrolle.</p>
+          <p>Im Modus „Ohne Verbindung“ verarbeitet die App die mitgelieferten Testdaten und lokale Testeingaben auf dem Gerät. Einstellungen können lokal gespeichert werden. Änderungen am mitgelieferten Testbestand gelten nur für die laufende Sitzung. Seit Version 0.3.11 bleiben selbst angelegte Durchgangs-Testoriginale, ihre Revisionen und ausgewählten Testanlagen auch nach Abmelden und Neuladen lokal gespeichert. Sie sind an das Testkonto, die Demo-Umgebung und die Filiale gebunden. Die Offline-Testdaten werden nicht mit Unternehmensdaten synchronisiert. Selbst ausgewählte oder exportierte Dateien bleiben unter eigener Kontrolle.</p>
         </section>
         <section id="uebermittlung" aria-labelledby="uebermittlung-titel">
           <h2 id="uebermittlung-titel">Übermittlung und Auswertung</h2>
+          <p>Bei der Strichcodesuche wertet die App das ausgewählte Etikettfoto auf dem Gerät aus. Das Foto wird dabei weder hochgeladen noch als Anlage gespeichert. Erst nach Bestätigung wird der gelesene Code in der Erfassung verwendet. Im Offline-Test erfolgt die Artikelsuche im mitgelieferten Bestand. Bei einer verbundenen Artikelsuche erhält die eingerichtete API den Suchcode.</p>
+          <p>Die Auswahl für Etikettfotos und MDE-Scanner gilt auf diesem Gerät. Die App speichert dafür nur, welche der beiden Funktionen eingeschaltet sind. Das Scanfeld nimmt den vom Gerät gelieferten Artikelcode an. Die weitere Artikelsuche verwendet denselben Weg wie bei einer von Hand eingegebenen Kennung.</p>
           <p>Die Offline-Testfunktionen senden deine Testeingaben nicht an eine Unternehmens-API oder automatisch an den Entwickler. Es sind keine Werbedienste und keine Dienste für Nutzungsanalyse eingebunden. Die App enthält eine technische Fehlerberichtsfunktion für angemeldete Online-Sitzungen; in der Offline-Testsession ist diese Übermittlung ausgeschaltet. Die enthaltene Microsoft-Anmeldebibliothek ist in diesen Testversionen nicht eingerichtet. Installation und Aktualisierung über Google Play werden von Google nach dessen Datenschutzbestimmungen verarbeitet. Wenn du mir eine E-Mail schickst, verarbeite ich die Nachricht und deine Absenderadresse, um dir zu antworten.</p>
         </section>
         <section id="berechtigungen" aria-labelledby="berechtigungen-titel">
           <h2 id="berechtigungen-titel">Zugriffe und Berechtigungen</h2>
+          <p>Persönliche Geräteerinnerungen benötigen die Benachrichtigungsfreigabe von Android. Die App speichert Zeitpunkt, Ablauf, technische Positionskennung und die Zuordnung zum berechtigten Zugang im privaten App-Speicher. Die Android-Meldung fordert zum Öffnen der App auf. Artikel, Filiale und Personenname erscheinen darin nicht. Beim ausdrücklichen Abmelden werden die persönlichen Erinnerungen entfernt. Android kann die Zustellung im Hintergrund verzögern.</p>
           <p>Die App kann den Verbindungsstatus erkennen und besitzt eine Internetberechtigung. Dateien oder Bilder werden nur durch eine von dir ausgelöste Aktion ausgewählt; eine Kameraaufnahme erfolgt über die von dir gewählte Kamera-App. Die App fordert keinen Zugriff auf Standort oder Kontakte an. Die automatische Android-Sicherung der App-Daten ist deaktiviert.</p>
         </section>
         <section id="loeschung" aria-labelledby="loeschung-titel">
