@@ -26,7 +26,7 @@
         font: 1.0625rem/1.75 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         -webkit-text-size-adjust: 100%;
       }
-      .page { width: min(calc(100% - 2.5rem), 56rem); margin-inline: auto; }
+      .page { width: min(calc(100% - 2 * clamp(14px, 4vw, 32px)), 50rem); margin-inline: auto; }
       .skip-link {
         position: absolute;
         top: .75rem;
@@ -46,42 +46,35 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
-        gap: .5rem 1.5rem;
-        padding-block: 1.125rem;
+        gap: 0 1.25rem;
+        padding-block: .4rem;
       }
       .brand { font-size: 1.125rem; font-weight: 750; letter-spacing: -.015em; }
-      .masthead-label { color: #d9e8f3; font-size: .875rem; }
-      main { padding-block: 3rem 2rem; }
-      .eyebrow { margin: 0 0 .75rem; color: var(--blue); font-size: .875rem; font-weight: 700; }
-      h1 { margin: 0; color: var(--navy); font-size: clamp(2rem, 5vw, 3rem); font-weight: 750; line-height: 1.2; letter-spacing: -.035em; overflow-wrap: anywhere; }
-      .intro { margin: 1rem 0 1.5rem; color: var(--muted); font-size: 1.125rem; }
-      .metadata {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem 2.5rem;
-        margin: 0 0 2rem;
-      }
-      .metadata div { min-width: 0; }
-      .metadata dt { color: var(--muted); font-size: .875rem; }
-      .metadata dd { margin: .125rem 0 0; color: var(--navy); font-size: .9375rem; font-weight: 600; }
+      .masthead-label { display: inline-flex; align-items: center; min-height: 44px; color: #d9e8f3; font-size: .875rem; }
+      main { padding-block: clamp(1.5rem, 4vw, 2.75rem) 2rem; }
+      h1 { margin: 0; color: var(--navy); font-size: clamp(2rem, 5vw, 3rem); font-weight: 750; line-height: 1.2; letter-spacing: -.035em; hyphens: manual; overflow-wrap: anywhere; }
+      .intro { max-width: 60ch; margin: .6rem 0 1.1rem; color: var(--muted); font-size: 1.0625rem; }
+      .policy-date { margin: 0 0 1rem; color: var(--muted); font-size: .875rem; }
       h2 { margin: 0 0 .75rem; color: var(--navy); font-size: 1.25rem; font-weight: 700; line-height: 1.4; }
       a { color: var(--blue); text-underline-offset: .2em; overflow-wrap: anywhere; }
+      main { overflow-wrap: anywhere; hyphens: auto; }
       a:hover { text-decoration-thickness: 2px; }
       a:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; border-radius: 2px; }
       .contents {
         margin-bottom: 1.5rem;
-        padding: 1.25rem 1.5rem;
+        padding: 0 1rem;
         border: 1px solid var(--line);
         border-radius: .875rem;
         background: #edf3f8;
       }
-      .contents h2 { margin: 0 0 .5rem; font-size: 1rem; }
+      .contents summary { min-height: 44px; align-content: center; padding-block: .35rem; color: var(--navy); font-weight: 650; cursor: pointer; }
+      summary:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
       .contents ol {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: .25rem 1.5rem;
         margin: 0;
-        padding: 0;
+        padding: 0 0 .65rem;
         list-style: none;
       }
       .contents a { display: block; min-height: 44px; padding-block: .5rem; font-size: .9375rem; }
@@ -99,16 +92,12 @@
       footer { padding-block: 0 2rem; color: var(--muted); font-size: .875rem; }
       footer p { margin: 0; }
       @media (max-width: 600px) {
-        body { font-size: 1rem; }
-        .page { width: min(calc(100% - 2rem), 56rem); }
-        .masthead .page { align-items: flex-start; flex-direction: column; padding-block: 1rem; }
-        main { padding-block: 2rem 1.5rem; }
+        body { font-size: 1rem; line-height: 1.55; }
+        main { padding-block: clamp(18px, 5vw, 28px) 1.5rem; }
         h1 { font-size: clamp(1.6rem, 5.8vw, 2rem); }
         .intro { font-size: 1rem; }
-        .metadata { gap: .875rem; flex-direction: column; margin-bottom: 1.5rem; }
-        .contents { padding: 1rem 1.125rem; }
         .contents ol { grid-template-columns: minmax(0, 1fr); gap: 0; }
-        article { padding: 1.5rem 1.25rem; border-radius: .875rem; }
+        article { padding: 1.1rem clamp(10px, 4vw, 20px); border-radius: .65rem; }
         section + section { margin-top: 1.5rem; padding-top: 1.5rem; }
         h2 { font-size: 1.125rem; }
       }
@@ -117,10 +106,10 @@
         .page { width: 100%; }
         .skip-link, .contents { display: none; }
         .masthead { background: none; color: #000; border-bottom: 1px solid #aaa; }
-        .masthead-label, .eyebrow, .intro, .metadata dt, footer { color: #333; }
+        .masthead-label, .intro, .policy-date, footer { color: #333; }
         main { padding-block: 1.5rem; }
         article { padding: 0; border: 0; box-shadow: none; }
-        h1, h2, .metadata dd { color: #000; }
+        h1, h2 { color: #000; }
         h2 { break-after: avoid; }
         a { color: #000; }
       }
@@ -131,19 +120,16 @@
     <header class="masthead">
       <div class="page">
         <span class="brand">GH-LossControl</span>
-        <span class="masthead-label">Daten und Datenschutz</span>
+        <a class="masthead-label" href="https://notechas.github.io/gh-losscontrol-datenschutz/versionsverlauf/">Versionsverlauf</a>
       </div>
     </header>
     <main class="page" id="datenschutzerklaerung">
-      <div class="eyebrow">Android-Testfassung und eigener Gerätebereich</div>
-      <h1>Datenschutzerklärung</h1>
-      <p class="intro">So verarbeitet die Android-Testversion von GH-LossControl deine Eingaben und die Daten, die du selbst weitergibst.</p>
-      <dl class="metadata">
-        <div><dt>Stand</dt><dd><time datetime="2026-11-13">13. November 2026</time></dd></div>
-        <div><dt>Geltungsbereich</dt><dd>Android-Testfassungen bis 0.5.5 und vorgesehene Fassung 0.6.0 · Versionscode 30036</dd></div>
-      </dl>
-      <nav class="contents" aria-labelledby="inhalt">
-        <h2 id="inhalt">Inhalt</h2>
+      <h1>Datenschutz<wbr>erklärung</h1>
+      <p class="intro">Privater Android-Test bis Version 0.6.</p>
+      <p class="policy-date">Stand <time datetime="2026-11-19">19. November 2026</time></p>
+      <nav class="contents" aria-label="Abschnitte der Datenschutzerklärung">
+        <details>
+          <summary>Themen im Überblick</summary>
         <ol>
           <li><a href="#kontakt">Verantwortlicher und Kontakt</a></li>
           <li><a href="#testbetrieb">Privater Testbetrieb</a></li>
@@ -157,6 +143,7 @@
           <li><a href="#hosting">Aufruf dieser öffentlichen Seite</a></li>
           <li><a href="#anbindungen">Getrennt eingerichteter API- und Unternehmensbetrieb</a></li>
         </ol>
+        </details>
       </nav>
       <article aria-label="Datenschutzerklärung für GH-LossControl">
         <section id="kontakt" aria-labelledby="kontakt-titel">
@@ -165,21 +152,21 @@
         </section>
         <section id="testbetrieb" aria-labelledby="testbetrieb-titel">
           <h2 id="testbetrieb-titel">Privater Testbetrieb</h2>
-          <p>Die Android-Testversionen ab 0.3.8 enthalten eine Vorführung mit Beispieldaten. Dafür wählst du „Lokale Testprofile“, „Ohne Verbindung“ und anschließend ein Profil, etwa „Filialteam“. Das Profil steht für eine Rolle in der Vorführung. Dazu brauchst du weder ein persönliches App-Konto noch ein Firmenkennwort. Verwende für diese Vorführung Beispieldaten, auch bei Fotos und Anlagen.</p>
-          <p>Die vorgesehene Fassung 0.6.0 ergänzt einen eigenen Gerätebereich für dauerhaft gespeicherte Artikel und MHD-Arbeit. Dieser Bereich ist von den Testprofilen getrennt. Die hier beschriebene Android-Testfassung hat keine eingerichtete Unternehmens-API oder Microsoft-Anmeldung. Beide lokalen Betriebsarten senden deine Arbeit weder an mich noch an ein Unternehmen. Sie verwenden keine Werbung und keinen Dienst zur Nutzungsanalyse.</p>
+          <p>Die lokalen Testprofile zeigen den Arbeitsablauf einer Rolle mit Beispieldaten, etwa für das Filialteam. Im Modus „Ohne Verbindung“ ist dafür weder ein persönliches App-Konto noch ein Firmenkennwort erforderlich. Für diese Vorführung sind Beispieldaten vorgesehen, auch bei Fotos und Anlagen.</p>
+          <p>Seit Version 0.6 gibt es außerdem einen eigenen Gerätebereich für dauerhaft gespeicherte Artikel und MHD-Arbeitslisten. Dieser Bereich ist von den Testprofilen getrennt. Die hier beschriebene Android-Testfassung hat keine eingerichtete Unternehmens-API oder Microsoft-Anmeldung. Beide lokalen Betriebsarten senden deine Arbeit weder an mich noch an ein Unternehmen. Sie verwenden keine Werbung und keinen Dienst zur Nutzungsanalyse.</p>
         </section>
         <section id="eigener-bereich" aria-labelledby="eigener-bereich-titel">
           <h2 id="eigener-bereich-titel">Eigener Gerätebereich, Zugang und Sicherung</h2>
-          <p>Unter „Eigenen Bereich ohne API öffnen“ kannst du einen eigenen Bestand auf diesem Gerät einrichten. Die App verarbeitet dafür deine gewählte Kennung, deinen Namen, die Bezeichnung des Arbeitsbereichs sowie die Angaben zu eigenen Artikeln, Verkaufseinheiten, MHD-Arbeitslisten, Positionen und Erfassungsentwürfen. Diese Daten dienen dem persönlichen Zugang, dem Wiederfinden eigener Arbeit und der MHD-Bearbeitung. Es entsteht kein Konto auf einem Server von mir.</p>
+          <p>Beim Einrichten eines eigenen Gerätebereichs verarbeitet die App die gewählte Kennung, den Namen und die Bezeichnung des Arbeitsbereichs. Hinzu kommen die Angaben zu eigenen Artikeln, Verkaufseinheiten, MHD-Arbeitslisten, Positionen und Erfassungsentwürfen. Diese Daten dienen dem persönlichen Zugang, dem Wiederfinden eigener Arbeit und der MHD-Bearbeitung. Es entsteht kein Konto auf einem Server von mir.</p>
           <p>Der Gerätebestand ist verschlüsselt gespeichert. Kennwort und privater Wiederherstellungscode dienen dem Entsperren beziehungsweise der Wiederherstellung. Die lokale Einrichtung erhält eine zufällige technische Kennung; diese ist keine ausgelesene Android-Gerätekennung. Bewahre den Wiederherstellungscode getrennt vom Gerät auf. Ich erhalte weder deinen Bestand noch deine Zugangsdaten oder diesen Code und kann einen verlorenen Bestand nicht für dich entschlüsseln.</p>
           <p>Ein Entwurf bleibt ein Entwurf, bis du die fachlichen Angaben bestätigst. Auch bestätigte eigene Artikel und MHD-Positionen bleiben nach dem Abmelden gespeichert. Abmelden sperrt den Zugang und löscht den Bestand nicht. Es gibt keine automatische Synchronisierung mit einem anderen Gerät oder einer Unternehmensdatenbank.</p>
           <p>Unter „Arbeitsbereich &amp; Sicherung“ kannst du eine verschlüsselte Sicherungsdatei speichern. Du wählst deren Ablage über die Dateiauswahl. Der gewählte Speicheranbieter kann die Datei außerhalb des Geräts speichern. Eine spätere Wiederherstellung prüft die Datei und verlangt die eigene Kennung und das Kennwort oder den privaten Wiederherstellungscode. Eine Sicherung wird nicht automatisch an mich übertragen. Der Code allein ersetzt keine Sicherungsdatei.</p>
         </section>
         <section id="erfassung" aria-labelledby="erfassung-titel">
           <h2 id="erfassung-titel">Artikel, Kamerascan und Handscanner</h2>
-          <p>Ab Version 0.5.5 kannst du einen Artikel direkt mit der Kamera scannen. Erst wenn du die Kamera startest und die Freigabe erteilst, erscheint das Livebild. Die App wertet den Strichcode auf dem Gerät aus. Sie speichert und überträgt weder das Livebild noch eine Videoaufnahme. Bei einem eindeutigen Treffer übernimmt sie den Code für die Artikelsuche und beendet den Scan. Du kannst ihn auch selbst stoppen.</p>
-          <p>Alternativ kannst du ein Etikettfoto auswählen und den erkannten Code bestätigen. In den Versionen 0.5.3 und 0.5.4 konntest du dafür auch ein einzelnes Foto mit der Kamera-App aufnehmen. Ein Original, das bereits in der Galerie liegt, bleibt dort. Der Testkatalog liefert die vorhandenen Angaben zum Artikel. Menge und Mindesthaltbarkeitsdatum trägst du selbst ein.</p>
-          <p>Die vorgesehene Fassung 0.6.0 kann außerdem den Text eines bewusst ausgewählten Verpackungsfotos auf dem Gerät lesen. Das Bild wird dafür nicht an einen Erkennungsdienst gesendet. Die Erkennungsdateien gehören zur App. Du prüfst die vorgeschlagenen Angaben und wählst ausdrücklich, welche Felder übernommen werden. Bestätigte Werte und die zugehörigen gelesenen Textstellen können mit dem eigenen Artikel beziehungsweise Entwurf gespeichert werden. Ein Foto für die Erkennung wird dadurch nicht automatisch als Originalbeleg abgelegt. Ohne Foto kannst du alle Angaben von Hand erfassen.</p>
+          <p>Der Strichcodescanner zeigt das Livebild erst nach dem Start und mit Kamerafreigabe an. Die App liest den Strichcode auf dem Gerät. Sie speichert und überträgt weder das Livebild noch eine Videoaufnahme. Bei einem eindeutigen Treffer übernimmt sie den Code für die Artikelsuche und beendet den Scan. Du kannst ihn auch selbst stoppen.</p>
+          <p>Für die Fotoerfassung lässt sich eine Verpackung fotografieren oder ein vorhandenes Bild auswählen. Ein Original in der Galerie bleibt dort. Auch ein Strichcode auf einem ausgewählten Bild kann für die Artikelsuche bestätigt werden. Der Testkatalog liefert die vorhandenen Angaben zum Artikel. Menge und Mindesthaltbarkeitsdatum trägst du selbst ein.</p>
+          <p>Für die Texterkennung liest die App das aufgenommene oder ausgewählte Verpackungsfoto auf dem Gerät. Das Bild wird dafür nicht an einen Erkennungsdienst gesendet. Die Erkennungsdateien gehören zur App. Du prüfst die vorgeschlagenen Angaben und wählst ausdrücklich, welche Felder übernommen werden. Bestätigte Werte und die zugehörigen gelesenen Textstellen können mit dem eigenen Artikel beziehungsweise Entwurf gespeichert werden. Ein Foto für die Erkennung wird dadurch nicht automatisch als Originalbeleg abgelegt. Ohne Foto kannst du alle Angaben von Hand erfassen.</p>
           <p>Ein Handscanner, etwa an einem Zebra-Gerät, kann den Code wie eine Tastatureingabe an das geöffnete MDE-Scanfeld übergeben. Enter oder „Artikelcode übernehmen“ bestätigt die Eingabe. Kamerascan und Etikettfotos lassen sich gemeinsam ausschalten, der Handscanner separat. Die Wahl wird nach Möglichkeit auf dem Gerät gespeichert. Die manuelle Produktsuche bleibt verfügbar.</p>
         </section>
         <section id="geraetedaten" aria-labelledby="geraetedaten-titel">
@@ -189,9 +176,9 @@
         </section>
         <section id="berechtigungen" aria-labelledby="berechtigungen-titel">
           <h2 id="berechtigungen-titel">Persönliche Geräteerinnerungen</h2>
-          <p>Wenn du Erinnerungen freigibst, plant die App sie auf deinem Android-Gerät. Die vorgesehene Fassung 0.6.0 kann dafür die tatsächlich offenen Aufgaben sowie deine Erinnerungs- und Ruhezeiten verwenden. Android kann um die Freigabe für Benachrichtigungen bitten. Gespeichert werden eine technische Kennung der Position oder Aufgabe, Art, Erinnerungs- und Ablaufzeit, Zustellstatus und die Zuordnung zum persönlichen Bereich, zur Umgebung und gegebenenfalls zur Filiale. Nach einem Geräteneustart kann die App noch gültige lokale Erinnerungen erneut einplanen.</p>
+          <p>Wenn du Erinnerungen freigibst, plant die App sie auf deinem Android-Gerät. Dafür kann sie die offenen Aufgaben sowie deine Erinnerungs- und Ruhezeiten verwenden. Android kann um die Freigabe für Benachrichtigungen bitten. Gespeichert werden eine technische Kennung der Position oder Aufgabe, Art, Erinnerungs- und Ablaufzeit, Zustellstatus und die Zuordnung zum persönlichen Bereich, zur Umgebung und gegebenenfalls zur Filiale. Nach einem Geräteneustart kann die App noch gültige lokale Erinnerungen erneut einplanen.</p>
           <p>Android zeigt einen allgemeinen Hinweis zum Öffnen der App. Artikelname, Filiale und Personenname erscheinen darin nicht. Ein Push-Dienst oder ein E-Mail-Versand wird für diese Geräteerinnerung nicht verwendet. Android kann die Anzeige im Hintergrund verzögern. Du kannst die Erinnerung in der App entfernen oder Benachrichtigungen in Android sperren. Beim ausdrücklichen Abmelden entfernt die App die persönlichen Geräteerinnerungen.</p>
-          <p>Der Live-Kamerascan ab Version 0.5.5 braucht die Kamerafreigabe. Du kannst sie in den Android-Einstellungen widerrufen und Artikel weiterhin von Hand suchen. Der Scan verwendet weder Mikrofon noch Standort oder Kontakte.</p>
+          <p>Der Strichcodescan und das Fotografieren einer Verpackung brauchen die Kamerafreigabe. Du kannst sie in den Android-Einstellungen widerrufen und Artikel weiterhin von Hand suchen. Der Scan verwendet weder Mikrofon noch Standort oder Kontakte.</p>
         </section>
         <section id="uebermittlung" aria-labelledby="uebermittlung-titel">
           <h2 id="uebermittlung-titel">Exporte, E-Mail und Google Play</h2>
@@ -211,7 +198,7 @@
         </section>
         <section id="hosting" aria-labelledby="hosting-titel">
           <h2 id="hosting-titel">Aufruf dieser öffentlichen Seite</h2>
-          <p>Diese Seite wird über GitHub Pages bereitgestellt. Beim Aufruf protokolliert und speichert GitHub nach eigenen Angaben die IP-Adresse aus Sicherheitsgründen, auch ohne GitHub-Anmeldung. Die Seite enthält keine Skripte, eingebundenen Analysewerkzeuge oder extern geladenen Schriftarten. Weitere Informationen findest du in der <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" rel="noreferrer">Datenschutzerklärung von GitHub</a>.</p>
+          <p>Die öffentliche Website liegt bei GitHub Pages. Beim Aufruf dieser Website protokolliert und speichert GitHub nach eigenen Angaben die IP-Adresse aus Sicherheitsgründen, auch ohne GitHub-Anmeldung. Die Seite enthält keine Skripte, eingebundenen Analysewerkzeuge oder extern geladenen Schriftarten. Weitere Informationen findest du in der <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" rel="noreferrer">Datenschutzerklärung von GitHub</a>.</p>
         </section>
         <section id="anbindungen" aria-labelledby="anbindungen-titel">
           <h2 id="anbindungen-titel">Getrennt eingerichteter API- und Unternehmensbetrieb</h2>

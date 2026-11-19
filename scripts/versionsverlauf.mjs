@@ -52,20 +52,16 @@ function sharedHead(privacyHtml) {
     .replace(/<meta name="description" content="[^"]+">/u,
       '<meta name="description" content="Entwicklung und geschlossene Testversionen von GH-LossControl, von der ersten Projektfassung bis zur aktuellen Test-App.">')
     .replace('href="#datenschutzerklaerung">Zur Datenschutzerklärung', 'href="#versionsverlauf">Zum Versionsverlauf')
-    .replace('<span class="masthead-label">Daten und Datenschutz</span>', '<a class="masthead-label" href="' + canonical + '">Datenschutzerklärung</a>')
+    .replace('href="' + canonical + 'versionsverlauf/">Versionsverlauf</a>', 'href="' + canonical + '">Datenschutz</a>')
     .replace(/^[ \t]*<\/style>/mu, versionStyles.trimEnd() + '\n    </style>');
 }
 
 const versionStyles = `
-      .masthead .masthead-label { color: #d9e8f3; text-decoration: underline; text-underline-offset: .18em; }
-      .versions-index { margin: 1.5rem 0; padding: 0 1rem; color: var(--navy); border: 1px solid var(--line); border-radius: .65rem; background: var(--surface); }
-      .versions-index summary { min-height: 44px; align-content: center; cursor: pointer; font-weight: 650; }
-      .versions-index ol { list-style: none; padding: .4rem 0 .9rem; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); column-gap: 1rem; }
-      .versions-index li { margin: 0; }
-      .versions-index a { display: block; align-content: center; min-height: 44px; color: var(--blue); }
+      .versions-index { display: flex; flex-wrap: wrap; gap: 4px; list-style: none; margin: 0 0 1rem; padding: 0; }
+      .versions-index a { display: grid; place-items: center; min-width: 44px; min-height: 44px; padding-inline: 4px; font-weight: 650; }
       .releases { scroll-margin-top: 1rem; }
       .releases section { scroll-margin-top: 1rem; }
-      .releases .release-date { margin: .2rem 0 .9rem; color: var(--muted); font-size: .92rem; }
+      .releases .release-date { margin: .2rem 0 .7rem; color: var(--muted); font-size: .875rem; }
       .releases h2 { margin-bottom: .15rem; overflow-wrap: anywhere; font-size: clamp(1.125rem, 2.6vw, 1.5rem); }
       .releases ul { margin: .6rem 0 0; padding-inline-start: 1.35rem; }
       .releases li + li { margin-top: .8rem; }
@@ -90,11 +86,10 @@ const timeline = entries.map(({ id, title, date, html }) =>
   html + '\n      </section>'
 ).join(newline);
 const page = head + '\n    <main class="page" id="versionsverlauf">\n' +
-  '      <h1>Versionsverlauf</h1>\n' +
+  '      <h1>Versions<wbr>verlauf</h1>\n' +
   '      <p class="intro">' + formatInline(intro.slice('# Versionsverlauf\n\n'.length).trim().replaceAll(newline,' ')) + '</p>\n' +
-  '      <nav aria-label="Version auswählen">\n        <details class="versions-index">\n' +
-  '          <summary>Zu einer Version springen</summary>\n        <ol>\n' + links + '\n        </ol>\n' +
-  '        </details>\n      </nav>\n      <article class="releases" aria-label="Entwicklung von GH-LossControl">\n' + timeline +
+  '      <nav aria-label="Versionsreihen">\n        <ol class="versions-index">\n' +
+  links + '\n        </ol>\n      </nav>\n      <article class="releases" aria-label="Entwicklung von GH-LossControl">\n' + timeline +
   '\n      </article>\n    </main>\n    <footer class="page"><p>GH-LossControl · <a href="' + canonical +
   '">Datenschutzerklärung</a></p></footer>\n  </body>\n</html>\n';
 
